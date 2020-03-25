@@ -1,5 +1,5 @@
 from math import sin
-from numpy import array,arange
+import numpy as np
 #from pylab import plot,xlabel,show
 import matplotlib.pyplot as plt
 
@@ -14,7 +14,7 @@ def f(r,t):
     ftheta = y
     fy =-g/l*np.sin(theta)
 #return the array of derivatives
-    return array([ftheta,fy],float)
+    return np.array([ftheta,fy],float)
 
 #set left and right initial and final times
 a = 0.0
@@ -24,7 +24,7 @@ N = 1000
 h = (b-a)/N
 
 #create array of indepdendent variable
-tpoints = arange(a,b,h)
+tpoints = np.arange(a,b,h)
 
 #create empty lists of x and y variables
 xpoints = []
@@ -33,7 +33,7 @@ ypoints = []
 #initial conditions
 #r is an array containing instantenous positions of particle
 # x and y coordinates
-r = array([-np.pi,np.pi.0],float) ## We don't know the range!!!!
+r = np.array([-np.pi,np.pi],float) ## We don't know the range!!!!
 
 #run a loop over all times
 for t in tpoints:
