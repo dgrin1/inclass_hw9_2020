@@ -14,14 +14,13 @@ def dft(y):
             c[k] += y[n]*exp(-2j*pi*k*n/N)
     return c
 
-mycode = '''
 y = loadtxt("pitch.txt",float)
 c = dft(y)
-#d= rfft(y)
+d= rfft(y)
 
 plot(abs(c))
 xlim(0,500)
 show()
-'''
+#'''mycode = '''
 
-print timeit.timeit(stmt = mycode)
+#print timeit.timeit(stmt = mycode)
