@@ -1,9 +1,8 @@
 from numpy import zeros,loadtxt
 #load the ability to read data and make arrays
 
+import matplotlib.pyplot as plt
 
-
-from pylab import plot,xlim,show
 #plotting tools
 
 from cmath import exp,pi
@@ -33,26 +32,16 @@ def dft(y):
     return c
 #j is the sqrt(-1)
 
-y = loadtxt("pitch.txt",float)
+y = loadtxt("trumpet.txt",float)
+start_time = timeit.default_timer()
 c = dft(y)
-d= rfft(y)
+#c= rfft(y)
+elapsed = timeit.default_timer() - start_time
+print(elapsed)
+plt.plot(abs(c))
+#plot(abs(c),'r*')
+plt.xlim(0,500)
+plt.ylim(min(abs(c)),max(abs(c)))
+plt.show()
 
-plot(abs(d))
-plot(abs(c),'r*')
-xlim(0,500)
-show()
 
-import timeit 
-
-# code snippet to be executed only once 
-mysetup = "from math import sqrt"
-  
-# code snippet whose execution time is to be measured 
-mycode='''
-def example(): 
-    mylist = [] 
-    for x in range(100): 
-        mylist.append(sqrt(x)) 
-'''
-
-print(timeit.timeit(setup = mysetup, stmt = mycode))

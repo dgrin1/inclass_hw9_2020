@@ -33,26 +33,13 @@ def dft(y):
     return c
 #j is the sqrt(-1)
 
-y = loadtxt("pitch.txt",float)
+y = loadtxt("sunspots.txt",float)
 c = dft(y)
 d= rfft(y)
 
-plot(abs(d))
-plot(abs(c),'r*')
+plot(abs(c))
 xlim(0,500)
 show()
+#'''mycode = '''
 
-import timeit 
-
-# code snippet to be executed only once 
-mysetup = "from math import sqrt"
-  
-# code snippet whose execution time is to be measured 
-mycode='''
-def example(): 
-    mylist = [] 
-    for x in range(100): 
-        mylist.append(sqrt(x)) 
-'''
-
-print(timeit.timeit(setup = mysetup, stmt = mycode))
+#print timeit.timeit(stmt = mycode)
