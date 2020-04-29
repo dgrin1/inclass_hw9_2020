@@ -34,28 +34,28 @@ m=(Exy-Ex*Ey)/denom
 c=(Exx*Ey-Ex*Exy)/denom
 print("Slope=",m)
 
-
-#Compare fit with data
+# 
+# #Compare fit with data
 yfit=empty(n,float)
 for i in range(n):
-	yfit[i]=m*x[i]+c
-
-
-#do my own scipy fit, using full nonlinear algorithm
+ 	yfit[i]=m*x[i]+c
+# 
+# 
+# #do my own scipy fit, using full nonlinear algorithm
 def lin(x,m,c):
-	return m*x+c
-
+ 	return m*x+c
+# 
 params,covar=curve_fit(lin,x,y)
 ygfit=lin(x,*params)
-
+# 
 plot(x,yfit)
 plot(x,ygfit,'r--')
-
+# 
 print(m,c)
 print(params)
-
+# 
 show()
-	
+# 	
 	
 	
 	

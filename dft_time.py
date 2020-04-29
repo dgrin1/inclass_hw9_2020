@@ -32,16 +32,17 @@ def dft(y):
     return c
 #j is the sqrt(-1)
 
-y = loadtxt("trumpet.txt",float)
+y = loadtxt("piano.txt",float)
 start_time = timeit.default_timer()
 c = dft(y)
 #c= rfft(y)
 elapsed = timeit.default_timer() - start_time
 print(elapsed)
+plt.ylim(min(abs(c)),.01*max(abs(c)))
 plt.plot(abs(c))
+
 #plot(abs(c),'r*')
 plt.xlim(0,500)
-plt.ylim(min(abs(c)),max(abs(c)))
 plt.show()
 
 
