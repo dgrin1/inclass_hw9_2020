@@ -20,6 +20,7 @@ def f(r,x,E):
     return array([fpsi,fphi],float)
 
 # Calculate the wavefunction for a particular energy
+#vaue of the wave function Psi(L)
 def solve(E):
     psi = 0.0
     phi = 1.0

@@ -15,6 +15,7 @@ def f(r):
     fy = -g
     return array([fx,fy],float)
 
+#run this to get final position as a function of initial velocity
 # Function to solve the equation and calculate the final height
 def height(v):
     r = array([0.0,v],float)
