@@ -4,7 +4,7 @@ from pylab import imshow,gray,show
 # Constants
 M = 100         # Grid squares on a side
 V = 1.0         # Voltage at top wall
-target = 1e-4   # Target accuracy
+target = 1e-4  # Target accuracy
 
 # Create arrays to hold potential values
 phi = zeros([M+1,M+1],float)

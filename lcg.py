@@ -1,5 +1,4 @@
-from pylab import plot,show
-
+from matplotlib import pyplot
 N = 100
 a = 1664525
 c = 1013904223
@@ -10,5 +9,5 @@ results = []
 for i in range(N):
     x = (a*x+c)%m
     results.append(x)
-plot(results,"o")
-show()
+pyplot.plot(results,"o")
+pyplot.show()
